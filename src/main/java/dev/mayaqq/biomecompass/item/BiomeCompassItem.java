@@ -71,21 +71,7 @@ public class BiomeCompassItem extends Item implements PolymerItem {
 
     public void track(BlockPos pos, World world, PlayerEntity player, ItemStack oldCompass, String biomeName) {
         world.playSound(null, player.getBlockPos(), SoundEvents.ITEM_LODESTONE_COMPASS_LOCK, SoundCategory.PLAYERS, 1.0F, 1.0F);
-        boolean bl = oldCompass.getCount() == 1;
-        if (bl) {
-            this.writeNbt(world.getRegistryKey(), pos, oldCompass.getOrCreateNbt(), biomeName);
-        } else {
-            oldCompass.decrement(1);
-            ItemStack newCompass = BiomeCompassItems.BIOME_COMPASS.getDefaultStack();
-
-            NbtCompound nbt = oldCompass.hasNbt() ? oldCompass.getNbt().copy() : new NbtCompound();
-            newCompass.setNbt(nbt);
-            this.writeNbt(world.getRegistryKey(), pos, nbt, biomeName);
-
-            if (!player.getInventory().insertStack(newCompass)) {
-                player.dropItem(newCompass, false);
-            }
-        }
+        oldCompass.decrement(1);
     }
 
     @Override

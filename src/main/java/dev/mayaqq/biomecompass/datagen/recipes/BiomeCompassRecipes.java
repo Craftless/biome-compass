@@ -27,11 +27,12 @@ public class BiomeCompassRecipes extends FabricRecipeProvider {
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, BiomeCompassItems.BIOME_COMPASS)
                 .pattern("#0#")
-                .pattern("0C0")
+                .pattern("NCN")
                 .pattern("#0#")
                 .input('#', saplings)
                 .input('0', logs)
                 .input('C', Items.COMPASS)
+                .input('N', Items.NETHERITE_INGOT)
                 .criterion(
                         FabricRecipeProvider.hasItem(Items.COMPASS),
                         FabricRecipeProvider.conditionsFromItem(Items.COMPASS)

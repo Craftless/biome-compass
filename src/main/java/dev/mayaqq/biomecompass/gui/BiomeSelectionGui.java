@@ -84,7 +84,7 @@ public class BiomeSelectionGui {
                         gui.close();
                         try {
                             Pair<BlockPos, RegistryEntry<Biome>> pair = executeLocateBiome(player.getBlockPos(), player.getServerWorld(), biome);
-                            player.sendMessage(Text.translatable("gui.biomecompass.biome_compass.found", biomeName, TextHelper.getBlockPosFormatted(pair.getFirst()), TextHelper.getDistanceFromPlayer(player, pair.getFirst())));
+                            player.sendMessage(Text.translatable("gui.biomecompass.biome_compass.found", biomeName, TextHelper.getDistanceFromPlayer(player, pair.getFirst())));
                             ((BiomeCompassItem) player.getStackInHand(hand).getItem()).track(pair.getFirst(), player.getServerWorld(), player, player.getStackInHand(hand), biomeName.getString());
                         } catch (Exception e) {
                             player.sendMessage(Text.translatable("gui.biomecompass.biome_compass.not_found", biomeName).formatted(Formatting.DARK_RED), false);

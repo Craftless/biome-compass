@@ -14,6 +14,6 @@
   "gui.biomecompass.biome_compass.identifier": "Identifier: %s",
   "gui.biomecompass.biome_compass.warmth": "Warmth: %s",
   "gui.biomecompass.biome_compass.precipitation": "Precipitation: %s",
-  "gui.biomecompass.biome_compass.found": "Found %s at %s which is %d blocks away.",
+  "gui.biomecompass.biome_compass.found": "Found %s %d blocks away.",
   "gui.biomecompass.biome_compass.not_found": "Could not find %s"
 }
